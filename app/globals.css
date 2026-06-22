@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a1628;
+  --surface: #111e33;
+  --accent-gold: #c8a96e;
+  --accent-teal: #1a8fa0;
+  --text-primary: #f7f4ef;
+  --text-muted: #6b7e9a;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), Arial, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+}
+
+::selection {
+  background: var(--accent-gold);
+  color: var(--background);
+}
