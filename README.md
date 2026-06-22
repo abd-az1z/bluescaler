@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blue Scaler
 
-## Getting Started
+**AI Agents for Growing Businesses in the Gulf.**
 
-First, run the development server:
+Blue Scaler helps restaurants, retailers, and SMBs across the GCC deploy intelligent AI agents that handle customer questions, take orders, and book appointments — in days, not months.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Powered by [Agentnomics](https://agentnomics.ai).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## What We Do
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Blue Scaler brings enterprise-grade AI to businesses that can't afford enterprise complexity. Our agents work across web chat, phone, and WhatsApp — 24/7, without hiring additional staff.
 
-## Learn More
+- **Conversational Agents** — Handle customer inquiries, menus, bookings, and orders automatically
+- **Analytical Agents** — Connect to business systems (SAP, Salesforce, ServiceNow) for intelligent reporting and decisions
+- **No-code setup** — Go live in days with ready-made agents tailored to your industry
+- **Proven ROI** — 60% more sales. 40 hours saved monthly per employee.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Industries
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Restaurants · Retail · Healthcare · Real Estate · Hospitality · Finance
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Get Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit [bluescaler.com](https://bluescaler.com) to book a demo or sign up.
+
+- **Book a demo:** sales@agentnomics.ai
+- **Support:** support@agentnomics.ai
+
+---
+
+*Blue Scaler is powered by [Agentnomics](https://agentnomics.ai) — the complete platform for building and deploying AI agents for your business.*
