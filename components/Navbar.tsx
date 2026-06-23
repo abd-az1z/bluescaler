@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { DEMO_BOOKING_URL, NAV_LINKS, SIGNUP_URLS } from "./site-content";
 
 const LOGO_SRC = "/agentnomics_logo.png";
@@ -10,7 +11,7 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8"
         aria-label="Main navigation"
       >
-        <a href="#top" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src={LOGO_SRC}
             alt="Agentnomics"
@@ -26,18 +27,24 @@ export function Navbar() {
               powered by Agentnomics
             </span>
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href === "#contact" ? DEMO_BOOKING_URL : link.href}
+              href={link.href}
               className="text-sm font-medium text-[#C8D2E2] transition-colors hover:text-[#F7F4EF]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
+          <a
+            href={DEMO_BOOKING_URL}
+            className="text-sm font-medium text-[#C8D2E2] transition-colors hover:text-[#F7F4EF]"
+          >
+            Book a Demo
+          </a>
         </div>
 
         <a

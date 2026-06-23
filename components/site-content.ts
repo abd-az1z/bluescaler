@@ -10,6 +10,9 @@ export const CONTACT_EMAIL_URL = "mailto:sales@agentnomics.ai";
 
 export const SUPPORT_EMAIL_URL = "mailto:support@agentnomics.ai";
 
+export const PARTNER_EMAIL_URL =
+  "mailto:partners@agentnomics.ai?subject=BlueScaler%20partner%20application";
+
 const WHATSAPP_NUMBER = "";
 
 export const WHATSAPP_URL = WHATSAPP_NUMBER
@@ -17,9 +20,11 @@ export const WHATSAPP_URL = WHATSAPP_NUMBER
   : DEMO_BOOKING_URL;
 
 export const NAV_LINKS = [
-  { label: "Conversational Agents", href: "#conversational-agents" },
-  { label: "Analytical Agents", href: "#analytical-agents" },
-  { label: "Book a Demo", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Agents", href: "/agents" },
+  { label: "Industries", href: "/industries" },
+  { label: "Customers", href: "/customers" },
+  { label: "Partners", href: "/partners" },
 ];
 
 export const CONVERSATIONAL_VIDEOS = [
@@ -33,27 +38,63 @@ export const CONVERSATIONAL_VIDEOS = [
   },
 ];
 
+export const AGENTS_PAGE_VIDEOS = [
+  {
+    title: "Aria customer support agent",
+    embedUrl: "https://www.youtube.com/embed/UKuWswMmhy8?autoplay=1&mute=1&loop=1&playlist=UKuWswMmhy8",
+  },
+  ...CONVERSATIONAL_VIDEOS,
+];
+
+export const CONVERSATIONAL_AGENT_CARDS = [
+  {
+    name: "Restaurant Bot",
+    tagline: "Let customers book a table or browse your menu any time.",
+  },
+  {
+    name: "Health Assistant",
+    tagline: "Book appointments, check results, and message caregivers.",
+  },
+  {
+    name: "Fairway Concierge",
+    tagline: "Book tee times without the hold music.",
+  },
+  {
+    name: "Retail Bot",
+    tagline: "Answer product questions and process returns 24/7.",
+  },
+  {
+    name: "Mechanic Bot",
+    tagline: "Book service appointments and follow up automatically.",
+  },
+];
+
 export const ANALYTICAL_AGENTS = [
   {
     name: "Sales Analytics Agent",
-    description:
-      "Spot revenue trends, sales gaps, and product performance from plain-English questions.",
+    description: "Track revenue, pipeline, and rep performance. Ask anything.",
   },
   {
-    name: "Inventory & Operations Agent",
-    description:
-      "Track stock, demand signals, and operational bottlenecks before they slow the business.",
+    name: "Inventory Agent",
+    description: "Monitor stock levels, forecast demand, and prevent shortages.",
   },
   {
-    name: "Customer Insights Agent",
-    description:
-      "Understand customer behavior, repeat buying patterns, and service issues in minutes.",
+    name: "Pricing Agent",
+    description: "Optimise pricing in real time based on demand and competition.",
+  },
+  {
+    name: "Compliance Agent",
+    description: "Stay audit-ready with automated compliance monitoring.",
+  },
+  {
+    name: "Warehouse Agent",
+    description: "Improve fulfilment speed and reduce warehouse errors.",
   },
 ];
 
 export const INDUSTRIES = [
   {
-    label: "Restaurants",
+    label: "Restaurants & F&B",
     useCase: "Handle reservations, menu questions, and orders automatically.",
   },
   {
@@ -69,8 +110,130 @@ export const INDUSTRIES = [
     useCase: "Automate guest queries across WhatsApp and your website.",
   },
   {
+    label: "Healthcare & Clinics",
+    useCase: "Book appointments, follow up with patients, and track supplies.",
+  },
+  {
     label: "Logistics",
     useCase: "Give customers real-time shipment updates without extra staff.",
+  },
+];
+
+export const INDUSTRY_TABS = [
+  {
+    label: "Restaurants & F&B",
+    challenges: [
+      "After-hours queries",
+      "Table booking staff load",
+      "Menu questions",
+      "Order updates",
+    ],
+    actions: [
+      "Restaurant Bot handles bookings, menu FAQs, and order status 24/7.",
+      "Analytical Agent tracks covers, peak hours, and menu performance.",
+    ],
+    value:
+      "Reduce front-of-house workload, never miss a booking, and serve guests faster.",
+  },
+  {
+    label: "Retail",
+    challenges: [
+      "Stock availability questions",
+      "Dynamic pricing pressure",
+      "Customer queries across channels",
+    ],
+    actions: [
+      "Dynamic Inventory & Replenishment Agent flags shortages before they hit sales.",
+      "Retail Bot answers product queries and return questions around the clock.",
+    ],
+    value:
+      "Improve fulfillment, protect margins, and respond faster across every channel.",
+    insight: "82% of retailers plan to deploy AI Agents within three years.",
+  },
+  {
+    label: "Automotive Services",
+    challenges: [
+      "Phone tag for bookings",
+      "Manual service follow-ups",
+      "Parts availability questions",
+    ],
+    actions: [
+      "Mechanic Bot books appointments and sends automated follow-ups.",
+      "Analytical Agent monitors turnaround and revenue per bay.",
+    ],
+    value: "Win more bookings, reduce admin, and keep customers informed.",
+  },
+  {
+    label: "Hospitality & Hotels",
+    challenges: [
+      "Guest queries at all hours",
+      "Reservation management",
+      "Multilingual support needs",
+    ],
+    actions: [
+      "Conversational Agent handles guest questions across WhatsApp and web.",
+      "Analytical Agent tracks occupancy, reviews, and revenue per room.",
+    ],
+    value: "Deliver 24/7 guest service without adding headcount.",
+  },
+  {
+    label: "Healthcare & Clinics",
+    challenges: [
+      "Appointment booking load",
+      "Patient follow-ups",
+      "Supply and compliance tracking",
+    ],
+    actions: [
+      "Health Assistant Bot supports appointments, lab results, and caregiver messages.",
+      "Compliance-driven agent helps teams monitor procurement and supplies.",
+    ],
+    value: "Improve patient experience and reduce admin burden.",
+  },
+  {
+    label: "Logistics & Delivery",
+    challenges: [
+      "Shipment status queries",
+      "Customer communication volume",
+      "Delivery performance visibility",
+    ],
+    actions: [
+      "Conversational Agent handles shipment queries on WhatsApp automatically.",
+      "Analytical Agent monitors delivery performance and SLA compliance.",
+    ],
+    value: "Reduce inbound calls and improve on-time delivery visibility.",
+  },
+];
+
+export const INDUSTRY_IMPACT = [
+  {
+    industry: "Restaurants & F&B",
+    capabilities: "Booking automation, menu queries, analytics",
+    impact: "Fewer missed bookings, reduced staff load",
+  },
+  {
+    industry: "Retail",
+    capabilities: "Inventory forecasting, pricing, product queries",
+    impact: "Higher margins, faster fulfilment",
+  },
+  {
+    industry: "Automotive",
+    capabilities: "Appointment booking, follow-ups, parts queries",
+    impact: "More bookings, less phone time",
+  },
+  {
+    industry: "Hospitality",
+    capabilities: "24/7 guest support, occupancy analytics",
+    impact: "Better reviews, lower headcount cost",
+  },
+  {
+    industry: "Healthcare",
+    capabilities: "Appointment bots, compliance, supply tracking",
+    impact: "Improved patient care, audit readiness",
+  },
+  {
+    industry: "Logistics",
+    capabilities: "Shipment queries, delivery analytics",
+    impact: "Fewer inbound calls, better SLA tracking",
   },
 ];
 
@@ -86,5 +249,54 @@ export const TRUST_PILLARS = [
   {
     title: "Real support",
     body: "Onboarding help is included. We set it up with you and stay close.",
+  },
+];
+
+export const RESULTS_STATS = [
+  ["60%", "More sales"],
+  ["40", "Hours saved monthly per employee"],
+  ["80%", "Routine queries automated"],
+  ["Days", "Go live timeline"],
+];
+
+export const CUSTOMER_CASE_STUDIES = [
+  {
+    company: "Dubai restaurant",
+    industry: "Restaurants & F&B",
+    country: "UAE",
+    challenge: "Manual booking reminders led to missed reservations and no-shows.",
+    result: "Reduced no-shows by 40% with automated booking reminders.",
+    agent: "Restaurant Bot",
+  },
+  {
+    company: "UAE retail chain",
+    industry: "Retail",
+    country: "UAE",
+    challenge: "Customers waited hours for stock and return answers.",
+    result: "Cut response time from 4 hours to under 2 minutes.",
+    agent: "Retail Bot",
+  },
+  {
+    company: "KSA automotive service",
+    industry: "Automotive",
+    country: "Saudi Arabia",
+    challenge: "Service bookings were lost to phone queues and slow follow-up.",
+    result: "Booked 3x more appointments with zero extra staff.",
+    agent: "Mechanic Bot",
+  },
+];
+
+export const PARTNER_TYPES = [
+  {
+    title: "Reseller Partners",
+    body: "Sell BlueScaler directly to your clients under your brand.",
+  },
+  {
+    title: "Implementation Partners",
+    body: "Deploy and customise agents for clients that need hands-on rollout.",
+  },
+  {
+    title: "Referral Partners",
+    body: "Refer leads and earn commission with no technical work needed.",
   },
 ];

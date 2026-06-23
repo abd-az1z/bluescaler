@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CONTACT_EMAIL_URL, NAV_LINKS, SUPPORT_EMAIL_URL } from "./site-content";
 
 const LOGO_SRC = "/agentnomics_logo.png";
@@ -29,14 +30,14 @@ export function Footer() {
         </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-[#C8D2E2]">
-          {NAV_LINKS.slice(0, 2).map((link) => (
-            <a
+          {NAV_LINKS.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
               className="transition-colors hover:text-[#C8A96E]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href={CONTACT_EMAIL_URL}
