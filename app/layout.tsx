@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppWidget } from "@/components/WhatsAppWidget";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
 export const metadata: Metadata = {
   title: "BlueScaler — AI Agents for Middle East Businesses",
@@ -29,9 +29,9 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${jakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[#0A1628] text-[#F7F4EF]">
+      <body className="min-h-full bg-[#060C18] text-[#F7F4EF]">
         <Navbar />
         {children}
         <Footer />

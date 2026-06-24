@@ -1,86 +1,163 @@
+import { BarChart3, MessageCircle, ShoppingBag } from "lucide-react";
 import { DEMO_BOOKING_URL } from "./site-content";
+
+type FeedIcon = typeof MessageCircle;
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate overflow-hidden bg-[#0A1628] px-5 pb-20 pt-20 sm:px-8 lg:pb-28 lg:pt-24"
+      className="relative isolate overflow-hidden bg-[#060C18] px-5 pb-24 pt-20 sm:px-8 lg:pb-32 lg:pt-28"
     >
-      <div className="absolute inset-0 -z-10 opacity-70">
-        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[#1A8FA0]/20 blur-3xl" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(247,244,239,0.055)_1px,transparent_1px),linear-gradient(90deg,rgba(247,244,239,0.055)_1px,transparent_1px)] bg-[size:72px_72px]" />
-      </div>
+      {/* Ambient glow orbs — breathe slowly */}
+      <div
+        className="glow-orb-gold orb-breathe pointer-events-none absolute -left-64 -top-64 h-[700px] w-[700px]"
+        aria-hidden
+      />
+      <div
+        className="glow-orb-teal orb-breathe-delayed pointer-events-none absolute -right-80 -top-32 h-[600px] w-[600px]"
+        aria-hidden
+      />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.04fr_0.96fr]">
-        <div>
-          <p className="mb-5 text-sm font-bold uppercase tracking-[0.22em] text-[#C8A96E]">
-            AI agents for GCC SMBs
-          </p>
-          <h1 className="max-w-4xl text-5xl font-black leading-[1.02] text-[#F7F4EF] sm:text-6xl lg:text-7xl">
-            AI Agents That Work While You Sleep
-          </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#C8D2E2] sm:text-xl">
-            Automate customer conversations, unlock business insights, and go
-            live in minutes, not days. Built for SMBs across the Middle East.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={DEMO_BOOKING_URL}
-              className="rounded bg-[#C8A96E] px-6 py-3 text-center text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
-            >
-              Book a Demo
-            </a>
-            <a
-              href="#conversational-agents"
-              className="rounded border border-[#6B7E9A]/50 px-6 py-3 text-center text-base font-bold text-[#F7F4EF] transition-colors hover:border-[#C8A96E] hover:text-[#C8A96E]"
-            >
-              See It in Action
-            </a>
-          </div>
+      {/* Dot grid overlay */}
+      <div className="bg-dot-grid pointer-events-none absolute inset-0" aria-hidden />
+
+      <div className="relative mx-auto max-w-7xl">
+        {/* Announcement pill — first to appear */}
+        <div className="hero-in mb-8">
+          <span className="brand-pill">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping-slow absolute h-full w-full rounded-full bg-[#7CE2EF] opacity-70" />
+              <span className="relative flex h-2 w-2 rounded-full bg-[#7CE2EF]" />
+            </span>
+            Now live · UAE · KSA · Qatar · Kuwait
+          </span>
         </div>
 
-        <div className="rounded-lg border border-white/10 bg-[#111E33] p-5 shadow-2xl shadow-black/30">
-          <div className="mb-5 flex items-center justify-between border-b border-white/10 pb-4">
-            <div>
-              <p className="text-sm font-semibold text-[#F7F4EF]">
-                Live agent coverage
-              </p>
-              <p className="text-xs text-[#9AABC3]">
-                Conversations, orders, insights
-              </p>
+        <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
+          {/* Left — headline + CTAs + stats */}
+          <div>
+            <h1 className="hero-in hero-in-d1 text-[54px] font-black leading-[1.02] tracking-tight text-[#F7F4EF] sm:text-7xl lg:text-[80px]">
+              AI Agents That<br />
+              Work While<br />
+              {/* Shimmer gold on the payoff word */}
+              <span className="text-gold-shimmer">You Scale.</span>
+            </h1>
+
+            <p className="hero-in hero-in-d2 mt-7 max-w-xl text-xl leading-8 text-[#C8D2E2]">
+              Automate customer conversations, unlock business insights, and
+              go live in days — not months. Built for SMBs across the Middle East.
+            </p>
+
+            <div className="hero-in hero-in-d3 mt-10 flex flex-wrap gap-4">
+              <a href={DEMO_BOOKING_URL} className="btn-primary">
+                Book a Demo →
+              </a>
+              <a href="#conversational-agents" className="btn-ghost">
+                See it in action
+              </a>
             </div>
-            <span className="rounded bg-[#1A8FA0]/20 px-3 py-1 text-xs font-bold text-[#7CE2EF]">
-              Online
-            </span>
+
+            {/* Stats row — last to enter */}
+            <div className="hero-in hero-in-d4 mt-12 grid grid-cols-3 gap-6 border-t border-white/8 pt-8">
+              {(
+                [
+                  ["60%", "More sales"],
+                  ["24/7", "Agent coverage"],
+                  ["Days", "To go live"],
+                ] as const
+              ).map(([num, label]) => (
+                <div key={label}>
+                  <p className="text-gold text-3xl font-black">{num}</p>
+                  <p className="mt-1 text-sm text-[#9AABC3]">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="space-y-4">
-            {[
-              ["Customer asks on WhatsApp", "Answered in 4 seconds"],
-              ["Restaurant order request", "Menu flow completed"],
-              ["Sales report question", "Chart generated"],
-            ].map(([event, status]) => (
-              <div
-                key={event}
-                className="rounded-lg border border-white/10 bg-[#0A1628]/70 p-4"
-              >
-                <p className="text-sm font-semibold text-[#F7F4EF]">{event}</p>
-                <p className="mt-1 text-sm text-[#C8A96E]">{status}</p>
+          {/* Right — Agent Activity Dashboard — floats gently */}
+          <div className="hero-card-in card-float glass-card gradient-border-gold rounded-2xl p-5">
+            {/* Dashboard header */}
+            <div className="mb-5 flex items-center justify-between">
+              <div>
+                <p className="text-sm font-bold text-[#F7F4EF]">
+                  BlueScaler Agent Hub
+                </p>
+                <p className="mt-0.5 text-xs text-[#9AABC3]">
+                  Live activity · GCC region
+                </p>
               </div>
-            ))}
-          </div>
+              <span className="teal-pill">
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping-slow absolute h-full w-full rounded-full bg-[#7CE2EF] opacity-70" />
+                  <span className="relative flex h-2 w-2 rounded-full bg-[#7CE2EF]" />
+                </span>
+                3 Agents Online
+              </span>
+            </div>
 
-          <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-            {[
-              ["24/7", "Coverage"],
-              ["60%", "Cost cut"],
-              ["5 min", "Setup"],
-            ].map(([stat, label]) => (
-              <div key={label} className="rounded bg-white/5 p-3">
-                <p className="text-xl font-black text-[#F7F4EF]">{stat}</p>
-                <p className="mt-1 text-xs text-[#9AABC3]">{label}</p>
-              </div>
-            ))}
+            {/* Live event feed */}
+            <div className="space-y-2.5">
+              {(
+                [
+                  {
+                    Icon: MessageCircle as FeedIcon,
+                    event: "Dubai restaurant booking",
+                    status: "Confirmed in 4s",
+                    statusClass: "text-[#C8A96E]",
+                    time: "Just now",
+                  },
+                  {
+                    Icon: BarChart3 as FeedIcon,
+                    event: "Sales report request",
+                    status: "Chart generated",
+                    statusClass: "text-[#7CE2EF]",
+                    time: "18s ago",
+                  },
+                  {
+                    Icon: ShoppingBag as FeedIcon,
+                    event: "Retail return request",
+                    status: "Flow completed",
+                    statusClass: "text-[#C8A96E]",
+                    time: "1m ago",
+                  },
+                ]
+              ).map(({ Icon, event, status, statusClass, time }) => (
+                <div
+                  key={event}
+                  className="flex items-center gap-3 rounded-xl border border-white/6 bg-white/3 p-3"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5">
+                    <Icon className="h-4 w-4 text-[#9AABC3]" />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold text-[#F7F4EF]">
+                      {event}
+                    </p>
+                    <p className={`text-xs ${statusClass}`}>{status}</p>
+                  </div>
+                  <span className="shrink-0 text-xs text-[#6B7E9A]">
+                    {time}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Footer stats */}
+            <div className="mt-4 grid grid-cols-3 gap-2 border-t border-white/8 pt-4">
+              {(
+                [
+                  ["24/7", "Coverage"],
+                  ["Web + WA", "Channels"],
+                  ["Instant", "Analytics"],
+                ] as const
+              ).map(([val, lbl]) => (
+                <div key={lbl} className="rounded-lg bg-white/3 p-3 text-center">
+                  <p className="text-sm font-black text-[#F7F4EF]">{val}</p>
+                  <p className="mt-0.5 text-[10px] text-[#9AABC3]">{lbl}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

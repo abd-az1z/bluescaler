@@ -12,12 +12,14 @@ out/
 # build output
 dist/
 build/
+*.tsbuildinfo
 
 # OS
 .DS_Store
 
 # internal planning docs
 Az/
+.superpowers
 
 # debug
 npm-debug.log*

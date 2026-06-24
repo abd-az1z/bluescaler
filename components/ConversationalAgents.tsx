@@ -1,53 +1,67 @@
 import { CONVERSATIONAL_VIDEOS, SIGNUP_URLS } from "./site-content";
 
+const STATS = [
+  ["24/7", "Automated support"],
+  ["60%", "Cost reduction"],
+  ["Minutes", "To deploy"],
+] as const;
+
 export function ConversationalAgents() {
   return (
     <section
       id="conversational-agents"
-      className="bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28"
+      className="relative overflow-hidden bg-[#0B1628] px-5 py-20 sm:px-8 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
+      <div
+        className="glow-orb-gold pointer-events-none absolute -right-48 -top-48 h-[600px] w-[600px] opacity-40"
+        aria-hidden
+      />
+
+      <div className="relative mx-auto max-w-7xl">
+        {/* Header row */}
+        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div className="scroll-reveal">
+            <span className="brand-pill mb-6 inline-flex">
               Conversational Agents
-            </p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-black text-[#F7F4EF] sm:text-5xl">
-              Customer conversations handled 24/7.
+            </span>
+            <h2 className="text-4xl font-black leading-tight text-[#F7F4EF] sm:text-5xl lg:text-6xl">
+              Customer conversations<br />
+              handled <span className="text-gold">24/7.</span>
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#C8D2E2]">
-              Deploy AI-powered chat agents that handle customer queries on
-              your website, in your app, or anywhere your customers are.
+            <p className="mt-6 text-xl leading-8 text-[#C8D2E2]">
+              Deploy AI-powered chat agents on your website, WhatsApp, or
+              app — without writing a single line of code.
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
-            {[
-              "24/7 automated customer support",
-              "Reduce support costs by up to 60%",
-              "Deploy in minutes, no code required",
-            ].map((benefit) => (
+          {/* Stat badges */}
+          <div className="grid grid-cols-3 gap-3">
+            {STATS.map(([stat, label], i) => (
               <div
-                key={benefit}
-                className="rounded-lg border border-white/10 bg-[#111E33] p-4 text-sm font-semibold leading-6 text-[#F7F4EF]"
+                key={label}
+                className={`${i === 0 ? "scroll-reveal" : i === 1 ? "scroll-reveal scroll-reveal-d1" : "scroll-reveal scroll-reveal-d2"} glass-card rounded-xl p-5 text-center`}
               >
-                {benefit}
+                <p className="text-gold text-2xl font-black">{stat}</p>
+                <p className="mt-1 text-sm text-[#9AABC3]">{label}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        {/* Video cards */}
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
           {CONVERSATIONAL_VIDEOS.map((video) => (
-            <article key={video.title} className="group">
-              <div className="aspect-video overflow-hidden rounded-lg border border-white/10 bg-[#111E33]">
-                <iframe
-                  src={video.embedUrl}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="h-full w-full"
-                />
+            <article key={video.title}>
+              <div className="glass-card overflow-hidden rounded-xl">
+                <div className="aspect-video">
+                  <iframe
+                    src={video.embedUrl}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
               </div>
               <h3 className="mt-4 text-lg font-bold text-[#F7F4EF]">
                 {video.title}
@@ -56,12 +70,11 @@ export function ConversationalAgents() {
           ))}
         </div>
 
-        <a
-          href={SIGNUP_URLS.conversational}
-          className="mt-10 inline-block rounded bg-[#C8A96E] px-6 py-3 text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
-        >
-          Sign Up for Conversational Agent
-        </a>
+        <div className="mt-10">
+          <a href={SIGNUP_URLS.conversational} className="btn-primary">
+            Sign Up for Conversational Agent →
+          </a>
+        </div>
       </div>
     </section>
   );
