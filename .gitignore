@@ -12,6 +12,7 @@ out/
 # build output
 dist/
 build/
+*.tsbuildinfo
 
 # OS
 .DS_Store
