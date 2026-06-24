@@ -40,8 +40,9 @@ export function IndustryTabs() {
           })}
         </div>
 
-        <div className="mt-8 grid gap-6 rounded-lg border border-white/10 bg-[#111E33] p-6 lg:grid-cols-[0.85fr_1.15fr] lg:p-8">
-          <div>
+        <div className="mt-8 grid gap-6 rounded-lg border border-white/10 bg-[#111E33] p-6 shadow-2xl shadow-black/20 lg:grid-cols-[0.85fr_1.15fr] lg:p-8">
+          <div className="flex flex-col justify-between gap-8">
+            <div>
             <h3 className="text-3xl font-black text-[#F7F4EF]">
               {active.label}
             </h3>
@@ -53,6 +54,19 @@ export function IndustryTabs() {
                 {active.insight} - Capgemini
               </p>
             ) : null}
+            </div>
+            <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-6">
+              {["Queries", "Actions", "Insights"].map((label, index) => (
+                <div key={label}>
+                  <p className="text-2xl font-black text-[#C8A96E]">
+                    0{index + 1}
+                  </p>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#9AABC3]">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2">

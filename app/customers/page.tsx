@@ -6,6 +6,12 @@ import {
   SIGNUP_URLS,
 } from "@/components/site-content";
 
+const PROOF_STEPS = [
+  ["01", "Capture repetitive customer work"],
+  ["02", "Automate response and follow-up"],
+  ["03", "Measure bookings, response time, and savings"],
+];
+
 export const metadata: Metadata = {
   title: "Customers | BlueScaler",
   description:
@@ -15,24 +21,49 @@ export const metadata: Metadata = {
 export default function CustomersPage() {
   return (
     <main>
-      <section className="bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
-            Customers
-          </p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight text-[#F7F4EF] sm:text-6xl">
-            Businesses across the Middle East trust BlueScaler.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#C8D2E2]">
-            See how SMBs in UAE, Saudi Arabia, Qatar, and Kuwait are
-            automating customer support and unlocking business insights.
-          </p>
-          <a
-            href={SIGNUP_URLS.conversational}
-            className="mt-8 inline-block rounded bg-[#C8A96E] px-6 py-3 text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
-          >
-            Join Them
-          </a>
+      <section className="relative isolate overflow-hidden bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(120deg,rgba(200,169,110,0.12),transparent_38%),linear-gradient(rgba(247,244,239,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(247,244,239,0.045)_1px,transparent_1px)] bg-[size:auto,76px_76px,76px_76px]" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
+              Customers
+            </p>
+            <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight text-[#F7F4EF] sm:text-6xl">
+              Proof for buyers who need to see it working.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#C8D2E2]">
+              A customer-story page built for Javed&apos;s review, ready for real
+              GCC logos, quotes, and named outcomes when those assets arrive.
+            </p>
+            <a
+              href={SIGNUP_URLS.conversational}
+              className="mt-8 inline-block rounded bg-[#C8A96E] px-6 py-3 text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
+            >
+              Join Them
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-white/10 bg-[#111E33] p-5 shadow-2xl shadow-black/30">
+            <div className="border-b border-white/10 pb-4">
+              <p className="text-sm font-black text-[#F7F4EF]">
+                Customer impact pipeline
+              </p>
+              <p className="mt-1 text-xs text-[#9AABC3]">
+                Replace placeholders with approved case data
+              </p>
+            </div>
+            <div className="mt-5 grid gap-3">
+              {PROOF_STEPS.map(([step, label]) => (
+                <div
+                  key={step}
+                  className="grid grid-cols-[3.5rem_1fr] items-center gap-4 rounded border border-white/10 bg-[#0A1628] p-4"
+                >
+                  <p className="text-2xl font-black text-[#C8A96E]">{step}</p>
+                  <p className="font-bold text-[#F7F4EF]">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -46,7 +77,7 @@ export default function CustomersPage() {
               (label, index) => (
                 <div
                   key={`${label}-${index}`}
-                  className="flex min-h-24 items-center justify-center rounded-lg border border-dashed border-[#6B7E9A]/45 bg-[#0A1628] text-sm font-bold text-[#9AABC3]"
+                  className="flex min-h-24 items-center justify-center rounded-lg border border-dashed border-[#6B7E9A]/45 bg-[#0A1628] text-sm font-bold uppercase tracking-[0.16em] text-[#9AABC3]"
                 >
                   Logos coming soon
                 </div>
@@ -75,7 +106,7 @@ export default function CustomersPage() {
             {CUSTOMER_CASE_STUDIES.map((study) => (
               <article
                 key={study.company}
-                className="rounded-lg border border-white/10 bg-[#111E33] p-6"
+                className="rounded-lg border border-white/10 bg-[#111E33] p-6 shadow-lg shadow-black/10"
               >
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#C8A96E]">
                   {study.industry} - {study.country}
@@ -86,7 +117,7 @@ export default function CustomersPage() {
                 <p className="mt-4 text-sm leading-6 text-[#9AABC3]">
                   Challenge: {study.challenge}
                 </p>
-                <p className="mt-4 text-base font-bold leading-7 text-[#F7F4EF]">
+                <p className="mt-4 border-l-2 border-[#C8A96E] pl-4 text-base font-bold leading-7 text-[#F7F4EF]">
                   {study.result}
                 </p>
                 <p className="mt-5 text-sm font-semibold text-[#7CE2EF]">

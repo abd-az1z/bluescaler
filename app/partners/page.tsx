@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { PARTNER_EMAIL_URL, PARTNER_TYPES } from "@/components/site-content";
 
+const PARTNER_METRICS = [
+  ["3", "Partner motions"],
+  ["5 days", "Target onboarding"],
+  ["GCC", "Regional focus"],
+];
+
 export const metadata: Metadata = {
   title: "Partners | BlueScaler",
   description:
@@ -18,25 +24,55 @@ const BENEFIT_ROWS = [
 export default function PartnersPage() {
   return (
     <main>
-      <section className="bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
-            Partners
-          </p>
-          <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight text-[#F7F4EF] sm:text-6xl">
-            Partner with BlueScaler.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#C8D2E2]">
-            Join our partner network and bring AI agents to your clients across
-            the Middle East. Resellers, agencies, and system integrators are
-            welcome.
-          </p>
-          <a
-            href={PARTNER_EMAIL_URL}
-            className="mt-8 inline-block rounded bg-[#C8A96E] px-6 py-3 text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
-          >
-            Become a Partner
-          </a>
+      <section className="relative isolate overflow-hidden bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(140deg,rgba(26,143,160,0.16),transparent_36%),linear-gradient(rgba(247,244,239,0.045)_1px,transparent_1px),linear-gradient(90deg,rgba(247,244,239,0.045)_1px,transparent_1px)] bg-[size:auto,84px_84px,84px_84px]" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
+              Partners
+            </p>
+            <h1 className="mt-4 max-w-4xl text-5xl font-black leading-tight text-[#F7F4EF] sm:text-6xl">
+              Build an AI agent revenue line.
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-[#C8D2E2]">
+              Join our partner network and bring AI agents to your clients
+              across the Middle East. Resellers, agencies, and system
+              integrators are welcome.
+            </p>
+            <a
+              href={PARTNER_EMAIL_URL}
+              className="mt-8 inline-block rounded bg-[#C8A96E] px-6 py-3 text-base font-bold text-[#0A1628] transition-colors hover:bg-[#DFC486]"
+            >
+              Become a Partner
+            </a>
+          </div>
+
+          <div className="rounded-lg border border-white/10 bg-[#111E33] p-5 shadow-2xl shadow-black/30">
+            <div className="grid gap-3 sm:grid-cols-3">
+              {PARTNER_METRICS.map(([stat, label]) => (
+                <div key={label} className="rounded bg-[#0A1628] p-4">
+                  <p className="text-3xl font-black text-[#F7F4EF]">{stat}</p>
+                  <p className="mt-2 text-xs font-bold uppercase tracking-[0.14em] text-[#9AABC3]">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 grid gap-3">
+              {[
+                "Recurring commissions on referred and managed accounts",
+                "Sales enablement for SMB buyers in the GCC",
+                "Technical support from onboarding through launch",
+              ].map((line) => (
+                <div
+                  key={line}
+                  className="rounded border border-white/10 bg-[#0A1628] p-4 text-sm font-bold leading-6 text-[#F7F4EF]"
+                >
+                  {line}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -70,6 +106,7 @@ export default function PartnersPage() {
                 key={title}
                 className="rounded-lg border border-white/10 bg-[#0A1628] p-6"
               >
+                <span className="mb-6 block h-1 w-14 rounded bg-[#C8A96E]" />
                 <h3 className="text-2xl font-black text-[#F7F4EF]">
                   {title}
                 </h3>
@@ -97,7 +134,7 @@ export default function PartnersPage() {
             {PARTNER_TYPES.map((type) => (
               <article
                 key={type.title}
-                className="rounded-lg border border-white/10 bg-[#111E33] p-6"
+                className="rounded-lg border border-white/10 bg-[#111E33] p-6 transition-colors hover:border-[#C8A96E]/70"
               >
                 <h3 className="text-2xl font-black text-[#F7F4EF]">
                   {type.title}
@@ -109,7 +146,7 @@ export default function PartnersPage() {
             ))}
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-lg border border-white/10">
+          <div className="mt-12 overflow-x-auto rounded-lg border border-white/10">
             <table className="w-full border-collapse text-left text-sm">
               <thead className="bg-[#111E33] text-[#F7F4EF]">
                 <tr>

@@ -8,6 +8,18 @@ import {
   SIGNUP_URLS,
 } from "@/components/site-content";
 
+const HERO_EVENTS = [
+  ["WhatsApp lead", "Restaurant booking confirmed", "4 sec"],
+  ["Inventory question", "Stock risk chart generated", "11 sec"],
+  ["Service request", "Mechanic slot reserved", "8 sec"],
+];
+
+const AGENT_CATEGORIES = [
+  ["Conversations", "Bookings, questions, orders, returns"],
+  ["Analytics", "Revenue, inventory, pricing, compliance"],
+  ["Builder", "Templates, no-code flows, fast launch"],
+];
+
 export const metadata: Metadata = {
   title: "Agents | BlueScaler",
   description:
@@ -17,8 +29,9 @@ export const metadata: Metadata = {
 export default function AgentsPage() {
   return (
     <main>
-      <section className="bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section className="relative isolate overflow-hidden bg-[#0A1628] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(247,244,239,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(247,244,239,0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#C8A96E]">
               Agents
@@ -46,14 +59,67 @@ export default function AgentsPage() {
             </div>
           </div>
 
-          <div className="aspect-video overflow-hidden rounded-lg border border-white/10 bg-[#111E33]">
-            <iframe
-              src={AGENTS_PAGE_VIDEOS[0].embedUrl}
-              title={AGENTS_PAGE_VIDEOS[0].title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="h-full w-full"
-            />
+          <div className="grid gap-5">
+            <div className="overflow-hidden rounded-lg border border-white/10 bg-[#111E33] shadow-2xl shadow-black/30">
+              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                <div>
+                  <p className="text-sm font-black text-[#F7F4EF]">
+                    Live agent desk
+                  </p>
+                  <p className="mt-1 text-xs text-[#9AABC3]">
+                    Website, WhatsApp, analytics
+                  </p>
+                </div>
+                <span className="rounded bg-[#1A8FA0]/20 px-3 py-1 text-xs font-black text-[#7CE2EF]">
+                  24/7 active
+                </span>
+              </div>
+              <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
+                <div className="aspect-video bg-[#0A1628] lg:aspect-auto">
+                  <iframe
+                    src={AGENTS_PAGE_VIDEOS[0].embedUrl}
+                    title={AGENTS_PAGE_VIDEOS[0].title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="h-full min-h-72 w-full"
+                  />
+                </div>
+                <div className="grid content-center gap-3 p-5">
+                  {HERO_EVENTS.map(([source, result, time]) => (
+                    <div
+                      key={result}
+                      className="grid grid-cols-[1fr_auto] gap-4 rounded border border-white/10 bg-[#0A1628] p-4"
+                    >
+                      <div>
+                        <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C8A96E]">
+                          {source}
+                        </p>
+                        <p className="mt-2 text-sm font-bold text-[#F7F4EF]">
+                          {result}
+                        </p>
+                      </div>
+                      <p className="self-center text-lg font-black text-[#7CE2EF]">
+                        {time}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3">
+              {AGENT_CATEGORIES.map(([title, body]) => (
+                <div
+                  key={title}
+                  className="rounded-lg border border-white/10 bg-[#111E33]/80 p-4"
+                >
+                  <p className="font-black text-[#F7F4EF]">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#9AABC3]">
+                    {body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -77,8 +143,9 @@ export default function AgentsPage() {
             {CONVERSATIONAL_AGENT_CARDS.map((agent) => (
               <article
                 key={agent.name}
-                className="rounded-lg border border-white/10 bg-[#0A1628] p-5"
+                className="group relative overflow-hidden rounded-lg border border-white/10 bg-[#0A1628] p-5 transition-colors hover:border-[#C8A96E]/70"
               >
+                <div className="absolute inset-x-0 top-0 h-1 bg-[#C8A96E] opacity-0 transition-opacity group-hover:opacity-100" />
                 <h3 className="text-xl font-black text-[#F7F4EF]">
                   {agent.name}
                 </h3>
@@ -143,8 +210,9 @@ export default function AgentsPage() {
             {ANALYTICAL_AGENTS.map((agent) => (
               <article
                 key={agent.name}
-                className="rounded-lg border border-white/10 bg-[#111E33] p-5"
+                className="rounded-lg border border-white/10 bg-[#111E33] p-5 shadow-lg shadow-black/10"
               >
+                <span className="mb-5 block h-1 w-12 rounded bg-[#1A8FA0]" />
                 <h3 className="text-xl font-black text-[#F7F4EF]">
                   {agent.name}
                 </h3>
