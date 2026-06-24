@@ -18,6 +18,7 @@ build/
 
 # internal planning docs
 Az/
+.superpowers
 
 # debug
 npm-debug.log*

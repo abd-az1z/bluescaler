@@ -20,7 +20,6 @@ export const WHATSAPP_URL = WHATSAPP_NUMBER
   : DEMO_BOOKING_URL;
 
 export const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { label: "Agents", href: "/agents" },
   { label: "Industries", href: "/industries" },
   { label: "Customers", href: "/customers" },
