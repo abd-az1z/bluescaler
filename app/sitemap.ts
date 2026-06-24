@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://bluescaler.com",
-      lastModified: new Date("2026-06-22"),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-  ];
+  const routes = ["", "/agents", "/industries", "/customers", "/partners"];
+
+  return routes.map((route) => ({
+    url: `https://bluescaler.com${route}`,
+    lastModified: new Date("2026-06-23"),
+    changeFrequency: "monthly",
+    priority: route ? 0.8 : 1,
+  }));
 }
