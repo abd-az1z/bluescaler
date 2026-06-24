@@ -300,7 +300,7 @@ export default function AgentsPage() {
                   <h3 className="mt-3 text-base font-black text-[#F7F4EF]">{agent.name}</h3>
                   <p className="mt-1.5 text-sm leading-6 text-[#9AABC3]">{agent.tagline}</p>
 
-                  {/* Mini chat snippet */}
+                  {preview && (
                   <div className="mt-4 space-y-1.5 rounded-xl border border-white/6 bg-black/15 p-3">
                     <div className="flex justify-end">
                       <div className="max-w-[90%] rounded-xl rounded-tr-sm bg-[#C8A96E]/12 px-2.5 py-1.5">
@@ -314,6 +314,7 @@ export default function AgentsPage() {
                       </div>
                     </div>
                   </div>
+                  )}
 
                   <a href={SIGNUP_URLS.conversational} className="btn-primary mt-4 w-full justify-center py-2! px-4! text-sm!">
                     Sign Up Today
@@ -372,8 +373,8 @@ export default function AgentsPage() {
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1A8FA0]/10">
                 <TrendingUp className="h-5 w-5 text-[#7CE2EF]" />
               </span>
-              <h3 className="mt-4 text-xl font-black text-[#F7F4EF]">Sales Analytics Agent</h3>
-              <p className="mt-2 text-sm leading-6 text-[#9AABC3]">Track revenue, pipeline, and rep performance. Ask anything.</p>
+              <h3 className="mt-4 text-xl font-black text-[#F7F4EF]">{ANALYTICAL_AGENTS[0].name}</h3>
+              <p className="mt-2 text-sm leading-6 text-[#9AABC3]">{ANALYTICAL_AGENTS[0].description}</p>
 
               {/* Sample query */}
               <div className="mt-5 rounded-xl border border-[#1A8FA0]/25 bg-[#1A8FA0]/6 px-4 py-3">
