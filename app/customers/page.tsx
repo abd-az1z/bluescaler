@@ -17,13 +17,13 @@ export const metadata: Metadata = {
 /* ── data ──────────────────────────────────────────────────────── */
 
 const HERO_WINS = [
-  { metric: "40%",  label: "fewer no-shows",    detail: "Restaurants & F&B · UAE" },
+  { metric: "20%",  label: "more orders",         detail: "Starchandco · UAE" },
   { metric: "2min", label: "response time",      detail: "Retail · UAE" },
   { metric: "3×",   label: "more bookings",      detail: "Automotive · KSA" },
 ];
 
 const CASE_META: Record<string, { big: string; label: string; sub: string; accent: "gold" | "teal" }> = {
-  "Dubai restaurant":       { big: "40%",  label: "fewer no-shows", sub: "automated with AI agent",  accent: "gold" },
+  "Starchandco":            { big: "20%",  label: "more orders",    sub: "and 2× brand awareness",   accent: "gold" },
   "UAE retail chain":       { big: "2min", label: "response time",  sub: "down from 4 hours",         accent: "teal" },
   "KSA automotive service": { big: "3×",   label: "more bookings",  sub: "zero extra staff",          accent: "gold" },
 };
@@ -42,9 +42,9 @@ const SERVICE_SLOTS = [
 
 const TESTIMONIALS = [
   {
-    role: "Operations Lead",
-    quote: "BlueScaler gave our team instant coverage during peak hours without adding more staff.",
-    industry: "Hospitality",
+    role: "Kwan, Starchandco",
+    quote: "Agentnomics has been the best thing our company has incorporated since launch. From customer inquiries to marketing, it really gave us that freedom back. Who doesn't want to make money and also have freedom to do it?",
+    industry: "Restaurants & F&B",
   },
   {
     role: "Retail Manager",

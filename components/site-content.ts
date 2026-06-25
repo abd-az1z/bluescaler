@@ -260,12 +260,12 @@ export const RESULTS_STATS = [
 
 export const CUSTOMER_CASE_STUDIES = [
   {
-    company: "Dubai restaurant",
+    company: "Starchandco",
     industry: "Restaurants & F&B",
     country: "UAE",
-    challenge: "Manual booking reminders led to missed reservations and no-shows.",
-    result: "Reduced no-shows by 40% with automated booking reminders.",
-    agent: "Restaurant Bot",
+    challenge: "Managing customer inquiries, address updates, and marketing promotions was consuming 8–10 hours a day.",
+    result: "Orders up 20% and brand awareness doubled — with Aria handling customer comms and marketing around the clock.",
+    agent: "Aria",
   },
   {
     company: "UAE retail chain",
