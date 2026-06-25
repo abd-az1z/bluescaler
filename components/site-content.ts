@@ -287,15 +287,15 @@ export const CUSTOMER_CASE_STUDIES = [
 
 export const PARTNER_TYPES = [
   {
-    title: "Reseller Partners",
-    body: "Sell BlueScaler directly to your clients under your brand.",
+    title: "Agency Partners",
+    body: "You bring the clients, we provide the AI platform. Add WhatsApp and web agents to your GCC client engagements without building anything from scratch.",
   },
   {
-    title: "Implementation Partners",
-    body: "Deploy and customise agents for clients that need hands-on rollout.",
+    title: "Systems Integrators",
+    body: "Technical teams who deploy and configure BlueScaler agents into client infrastructure. We manage the platform — you own the integration layer.",
   },
   {
-    title: "Referral Partners",
-    body: "Refer leads and earn commission with no technical work needed.",
+    title: "Consultants",
+    body: "Business advisors who identify automation opportunities and bring BlueScaler as the platform of choice. From scoping to go-live, we support the delivery.",
   },
 ];
