@@ -104,6 +104,17 @@ export default function AgentsPage() {
     <main>
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden bg-[#060C18] px-5 pb-24 pt-20 sm:px-8 lg:pb-32 lg:pt-28">
+        {/* Background video */}
+        <video
+          src="/videos/agents-hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+          aria-hidden
+        />
+
         <div className="glow-orb-gold orb-breathe pointer-events-none absolute -left-48 -top-48 h-[600px] w-[600px]" aria-hidden />
         <div className="glow-orb-teal orb-breathe-delayed pointer-events-none absolute -right-60 -top-20 h-[500px] w-[500px]" aria-hidden />
         <div className="bg-dot-grid pointer-events-none absolute inset-0" aria-hidden />

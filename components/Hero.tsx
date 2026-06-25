@@ -9,6 +9,17 @@ export function Hero() {
       id="top"
       className="relative isolate overflow-hidden bg-[#060C18] px-5 pb-24 pt-20 sm:px-8 lg:pb-32 lg:pt-28"
     >
+      {/* Background video */}
+      <video
+        src="/videos/platform-hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+        aria-hidden
+      />
+
       {/* Ambient glow orbs — breathe slowly */}
       <div
         className="glow-orb-gold orb-breathe pointer-events-none absolute -left-64 -top-64 h-[700px] w-[700px]"
