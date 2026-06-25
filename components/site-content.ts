@@ -29,18 +29,18 @@ export const NAV_LINKS = [
 export const CONVERSATIONAL_VIDEOS = [
   {
     title: "Customer Support Agent",
-    embedUrl: "https://www.youtube.com/embed/nVrMT6VZD8I",
+    videoSrc: "/videos/AI%20Customer%20Support%20BOT.mp4",
   },
   {
     title: "Starchandco wins with Agentnomics",
-    embedUrl: "https://www.youtube.com/embed/ARB4oYAoxhk",
+    videoSrc: "/videos/starchandco%20wins%20with%20agentnomics.mp4",
   },
 ];
 
 export const AGENTS_PAGE_VIDEOS = [
   {
     title: "Aria customer support agent",
-    embedUrl: "https://www.youtube.com/embed/UKuWswMmhy8?autoplay=1&mute=1&loop=1&playlist=UKuWswMmhy8",
+    videoSrc: "/videos/aria-hero-silent.webm",
   },
   ...CONVERSATIONAL_VIDEOS,
 ];

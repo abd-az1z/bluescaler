@@ -160,12 +160,13 @@ export default function AgentsPage() {
               </div>
               <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
                 <div className="aspect-video bg-[#060C18] lg:aspect-auto">
-                  <iframe
-                    src={AGENTS_PAGE_VIDEOS[0].embedUrl}
-                    title={AGENTS_PAGE_VIDEOS[0].title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="h-full min-h-52 w-full"
+                  <video
+                    src={AGENTS_PAGE_VIDEOS[0].videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full min-h-52 w-full object-cover"
                   />
                 </div>
                 <div className="grid content-center gap-3 p-5">
@@ -330,11 +331,9 @@ export default function AgentsPage() {
               <article key={video.title}>
                 <div className="glass-card overflow-hidden rounded-xl">
                   <div className="aspect-video">
-                    <iframe
-                      src={video.embedUrl}
-                      title={video.title}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
+                    <video
+                      src={video.videoSrc}
+                      controls
                       className="h-full w-full"
                     />
                   </div>

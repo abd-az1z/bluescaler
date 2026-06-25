@@ -40,13 +40,6 @@ const SERVICE_SLOTS = [
   { time: "4:00PM",  service: "Full Service",     via: "WhatsApp" },
 ];
 
-const LOGO_PLACEHOLDERS = [
-  { label: "F&B Group",           country: "UAE"   },
-  { label: "Retail Chain",        country: "UAE"   },
-  { label: "Automotive Services", country: "KSA"   },
-  { label: "Hospitality Group",   country: "Qatar" },
-];
-
 const TESTIMONIALS = [
   {
     role: "Operations Lead",
@@ -146,23 +139,12 @@ export default function CustomersPage() {
         </div>
       </section>
 
-      {/* ── LOGO STRIP ───────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#060C18] px-5 py-14 sm:px-8">
+      {/* ── TRUSTED BY ───────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#060C18] px-5 py-10 sm:px-8">
         <div className="relative mx-auto max-w-7xl">
-          <p className="scroll-reveal mb-6 text-center text-xs font-bold uppercase tracking-[0.2em] text-[#4A5568]">
+          <p className="scroll-reveal text-center text-xs font-bold uppercase tracking-[0.2em] text-[#4A5568]">
             Trusted by businesses across the GCC
           </p>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {LOGO_PLACEHOLDERS.map(({ label, country }) => (
-              <div
-                key={label}
-                className="scroll-reveal flex min-h-20 flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-[#C8A96E]/18 bg-white/[0.02] px-4"
-              >
-                <p className="text-xs font-black text-[#C8A96E]/50">{label}</p>
-                <p className="text-[10px] font-semibold text-[#4A5568]">{country}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

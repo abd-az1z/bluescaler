@@ -54,11 +54,9 @@ export function ConversationalAgents() {
             <article key={video.title}>
               <div className="glass-card overflow-hidden rounded-xl">
                 <div className="aspect-video">
-                  <iframe
-                    src={video.embedUrl}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                  <video
+                    src={video.videoSrc}
+                    controls
                     className="h-full w-full"
                   />
                 </div>
