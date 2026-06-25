@@ -3,8 +3,7 @@ export const SIGNUP_URLS = {
   analytical: "https://app.agentnomics.ai/signup/analytical-agent",
 };
 
-export const DEMO_BOOKING_URL =
-  "mailto:sales@agentnomics.ai?subject=BlueScaler%20demo%20request";
+export const DEMO_BOOKING_URL = "https://calendar.app.google/mshQQNn8UMNhjcGdA";
 
 export const CONTACT_EMAIL_URL = "mailto:sales@agentnomics.ai";
 
